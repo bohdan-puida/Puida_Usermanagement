@@ -41,7 +41,8 @@ public class User {
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-    
+
+
 
     public String getFullName() throws IllegalStateException {
         if (getFirstName() == null || getLastName() == null) {
