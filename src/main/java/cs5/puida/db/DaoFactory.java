@@ -6,7 +6,7 @@ import java.util.Properties;
 
     public class DaoFactory {
 
-        protected static final String USER_DAO = "dao.cs5.puida.db.UserDao";
+
         private final Properties properties;
         protected final static DaoFactory INSTANCE = new DaoFactory();
 
@@ -35,7 +35,7 @@ import java.util.Properties;
         public UserDao getUserDao() {
             UserDao result = null;
             try {
-                Class<?> clazz = Class.forName(properties.getProperty(USER_DAO));
+                Class<?> clazz = Class.forName(properties.getProperty("cs5.puida.db.UserDao"));
                 result = (UserDao) clazz.newInstance();
                 result.setConnectionFactory(getConnectionFactory());
             } catch (Exception e) {
