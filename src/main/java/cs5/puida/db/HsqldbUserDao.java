@@ -70,7 +70,7 @@ import cs5.puida.User;
     }
 
 
-    public User update(User user) throws DatabaseException {
+    public void update(User user) throws DatabaseException {
         try {
             Connection connection = connectionFactory.createConnection();
             PreparedStatement statement = connection
@@ -85,7 +85,6 @@ import cs5.puida.User;
             }
             statement.close();
             connection.close();
-            return user;
         } catch (DatabaseException e) {
             throw e;
         } catch (SQLException e) {
@@ -94,7 +93,7 @@ import cs5.puida.User;
 
     }
 
-    public User delete(User user) throws DatabaseException {
+    public void delete(User user) throws DatabaseException {
         try {
             Connection connection = connectionFactory.createConnection();
             PreparedStatement statement = connection
@@ -106,7 +105,6 @@ import cs5.puida.User;
             }
             statement.close();
             connection.close();
-            return user;
         } catch (DatabaseException e) {
             throw e;
         } catch (SQLException e) {

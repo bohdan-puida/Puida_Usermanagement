@@ -58,11 +58,11 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
     }
     public void testDelete() throws Exception {
         try {
+
             User userToCheck = dao.find(1001L);
             assertNotNull(userToCheck);
             dao.delete(userToCheck);
-            userToCheck = dao.find(1001L);
-            assertEquals(null, userToCheck);
+            assertEquals(1, dao.findAll().size());
         } catch (DatabaseException e) {
             fail(e.getMessage());
         }
