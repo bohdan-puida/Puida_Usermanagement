@@ -10,6 +10,30 @@ public class User {
     private String lastName;
     private Date dateOfBirth;
 
+    public User(User user) {
+        id = user.getId();
+        firstName = user.getFirstName();
+        lastName = user.getLastName();
+        dateOfBirth = user.getDateOfBirth();
+    }
+
+    public User() {
+
+    }
+
+    public User(Long id, String firstName, String lastName, Date now) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = now;
+    }
+
+    public User(String firstName, String lastName, Date now) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = now;
+    }
+
     public Long getId() {
         return id;
     }
@@ -35,7 +59,7 @@ public class User {
     }
 
 
-    
+
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
