@@ -61,7 +61,8 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
             User userToCheck = dao.find(1001L);
             assertNotNull(userToCheck);
             dao.delete(userToCheck);
-            assertNull(dao.find(1001L));
+            userToCheck = dao.find(1001L);
+            assertEquals(null, userToCheck);
         } catch (DatabaseException e) {
             fail(e.getMessage());
         }

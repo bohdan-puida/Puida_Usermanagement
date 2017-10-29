@@ -12,7 +12,7 @@ import java.sql.Date;
 import cs5.puida.User;
 
 
-public class HsqldbUserDao implements UserDao {
+ class HsqldbUserDao implements UserDao {
 
     private static final String SELECT_ALL_QUERY = "SELECT id, firstname, lastname, dateofbirth FROM users";
     private static final String INSERT_QUERY = "INSERT INTO users(firstname, lastname, dateofbirth) VALUES (?, ?, ?)";
@@ -26,7 +26,6 @@ public class HsqldbUserDao implements UserDao {
     }
 
     public HsqldbUserDao(ConnectionFactory connectionFactory) {
-        //super();
         this.connectionFactory = connectionFactory;
     }
 
