@@ -10,7 +10,7 @@ public class UserTest extends TestCase {
     private static final int AGE = 19;
     private static final int DAY_OF_BIRTH = 6;
     private static final int YEAR_OF_BIRTH = 1998;
-    private static final int IRRELEVANT_DATE = 5;
+
 
     public void setUp() throws Exception {
         super.setUp();
@@ -32,7 +32,6 @@ public class UserTest extends TestCase {
             user.getFullName();
             fail("something is undefined, ergo IllegalStateException is expected");
         } catch (IllegalStateException e) {
-
         }
     }
 
@@ -41,8 +40,4 @@ public class UserTest extends TestCase {
         assertEquals(AGE, user.getAge());
     }
 
-    public void testGetAgeWithIncorrectData() {
-        user.setDateOfBirth(dateOfBirth);
-        assertFalse(AGE + IRRELEVANT_DATE == user.getAge());
-    }
 }

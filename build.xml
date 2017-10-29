@@ -24,7 +24,7 @@
             <formatter type="plain"/>
             <batchtest>
                 <fileset dir="${test-java-dir}">
-                    <include name="*Test*.java"/>
+                    <include name="**/*Test*.java"/>
                 </fileset>
             </batchtest>
         </junit>
