@@ -18,7 +18,7 @@ public class UserTableModel extends AbstractTableModel {
     private List users = null;
 
     public UserTableModel(Collection users) {
-        this.users = new ArrayList(users);
+        this.users = new ArrayList<>(users);
     }
     public int getRowCount() {
         return users.size();
@@ -49,4 +49,11 @@ public class UserTableModel extends AbstractTableModel {
         return null;
     }
 
+    public void addUsers(Collection<User> users) {
+        this.users.addAll(users);
+    }
+
+    public void clearUsers() {
+        this.users = new ArrayList<>();
+    }
 }
