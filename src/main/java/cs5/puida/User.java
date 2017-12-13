@@ -95,5 +95,34 @@ public class User {
         return currentDayOfYear < birthDay ?  --age : age;
     }
 
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || !(object instanceof User)) {
+            return false;
+        }
+        if (this.id == null) {
+            if (((User) object).id == null) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (this.id == null || ((User) object).id == null) {
+            return false;
+        }
+        return this.id.equals(((User) object).id);
     }
+
+    @Override
+    public int hashCode() {
+        if (id == null) {
+            return 0;
+        }
+        return id.hashCode();
+    }
+}
+
+
 

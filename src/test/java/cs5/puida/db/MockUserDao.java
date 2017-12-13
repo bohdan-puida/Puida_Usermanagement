@@ -5,6 +5,7 @@ import cs5.*;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class MockUserDao implements UserDao{
@@ -40,7 +41,15 @@ public class MockUserDao implements UserDao{
     public Collection<User> findAll() throws DatabaseException {
         return users.values();
     }
-
+    public Collection find(String firstName, String lastName) throws DatabaseException {
+        Collection<User> foundUsers = new LinkedList<>();
+        for (Map.Entry<Long, User> user : users.entrySet()) {
+            if (user.getValue().getFirstName().equals(firstName) && user.getValue().getLastName().equals(lastName)) {
+                foundUsers.add(user.getValue());
+            }
+        }
+        return foundUsers;
+    }
 
     @Override
     public void setConnectionFactory(ConnectionFactory connectionFactory) {
